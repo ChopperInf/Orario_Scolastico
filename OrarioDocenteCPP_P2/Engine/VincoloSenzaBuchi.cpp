@@ -1,5 +1,12 @@
 #include "VincoloSenzaBuchi.h"
 
+VincoloSenzaBuchi::VincoloSenzaBuchi() {
+    LOG_CTOR("VincoloSenzaBuchi this=" << this);
+}
+VincoloSenzaBuchi::~VincoloSenzaBuchi() {
+    LOG_DTOR("VincoloSenzaBuchi this=" << this);
+}
+
 bool VincoloSenzaBuchi::Verifica(Orario& orario) {
     for (int giorno = 0; giorno < 5; giorno++) {
         bool lezioneIniziata = false;

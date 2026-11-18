@@ -1,7 +1,12 @@
 #include "VincoloMaxOreGiornaliere.h"
 
 VincoloMaxOreGiornaliere::VincoloMaxOreGiornaliere(int massimoOre)
-    : massimoOre(massimoOre) {}
+    : massimoOre(massimoOre) {
+    LOG_CTOR("VincoloMaxOreGiornaliere this=" << this << " massimo=" << massimoOre);
+}
+VincoloMaxOreGiornaliere::~VincoloMaxOreGiornaliere() {
+    LOG_DTOR("VincoloMaxOreGiornaliere this=" << this);
+}
 
 bool VincoloMaxOreGiornaliere::Verifica(Orario& orario) {
     if (massimoOre < 0 || massimoOre > 8) return false;

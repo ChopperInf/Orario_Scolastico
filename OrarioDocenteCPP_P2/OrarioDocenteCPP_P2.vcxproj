@@ -76,6 +76,7 @@
     <ClCompile Include="Engine\VincoloMaxOreGiornaliere.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DebugP2.h" />
     <ClInclude Include="DatiEsempio.h" />
     <ClInclude Include="InterfacciaConsole.h" />
     <ClInclude Include="Model\Classe.h" />

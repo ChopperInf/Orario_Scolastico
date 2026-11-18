@@ -22,6 +22,7 @@
     <ClCompile Include="Engine\VincoloMaxOreGiornaliere.cpp"><Filter>Engine</Filter></ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DebugP2.h"><Filter>Radice</Filter></ClInclude>
     <ClInclude Include="DatiEsempio.h"><Filter>Radice</Filter></ClInclude>
     <ClInclude Include="InterfacciaConsole.h"><Filter>Radice</Filter></ClInclude>
     <ClInclude Include="Model\Classe.h"><Filter>Model</Filter></ClInclude>

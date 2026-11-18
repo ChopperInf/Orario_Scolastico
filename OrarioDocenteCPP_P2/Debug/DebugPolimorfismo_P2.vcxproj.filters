@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Debug"><UniqueIdentifier>{9B2C1908-AD3B-4D70-B42A-8AB60E2D11B1}</UniqueIdentifier></Filter>
+    <Filter Include="Model"><UniqueIdentifier>{D591FA10-7301-45F0-AD0D-65C68F55C3A3}</UniqueIdentifier></Filter>
+    <Filter Include="Engine"><UniqueIdentifier>{9C03CDB2-F20E-4AC6-AE3D-92819D35DCC9}</UniqueIdentifier></Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main_debug.cpp"><Filter>Debug</Filter></ClCompile>
+    <ClCompile Include="..\Model\Tessera.cpp"><Filter>Model</Filter></ClCompile>
+    <ClCompile Include="..\Model\TesseraAula.cpp"><Filter>Model</Filter></ClCompile>
+    <ClCompile Include="..\Model\TesseraLaboratorio.cpp"><Filter>Model</Filter></ClCompile>
+    <ClCompile Include="..\Model\DotazioneLabInformatica.cpp"><Filter>Model</Filter></ClCompile>
+    <ClCompile Include="..\Model\Orario.cpp"><Filter>Model</Filter></ClCompile>
+    <ClCompile Include="..\Model\Posizione.cpp"><Filter>Model</Filter></ClCompile>
+    <ClCompile Include="..\Engine\VincoloSenzaBuchi.cpp"><Filter>Engine</Filter></ClCompile>
+    <ClCompile Include="..\Engine\VincoloMaxOreGiornaliere.cpp"><Filter>Engine</Filter></ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\DebugP2.h"><Filter>Debug</Filter></ClInclude>
+    <ClInclude Include="..\Model\Tessera.h"><Filter>Model</Filter></ClInclude>
+    <ClInclude Include="..\Model\TesseraAula.h"><Filter>Model</Filter></ClInclude>
+    <ClInclude Include="..\Model\TesseraLaboratorio.h"><Filter>Model</Filter></ClInclude>
+    <ClInclude Include="..\Model\DotazioneLabInformatica.h"><Filter>Model</Filter></ClInclude>
+    <ClInclude Include="..\Model\Orario.h"><Filter>Model</Filter></ClInclude>
+    <ClInclude Include="..\Model\Posizione.h"><Filter>Model</Filter></ClInclude>
+    <ClInclude Include="..\Engine\Vincolo.h"><Filter>Engine</Filter></ClInclude>
+    <ClInclude Include="..\Engine\VincoloSenzaBuchi.h"><Filter>Engine</Filter></ClInclude>
+    <ClInclude Include="..\Engine\VincoloMaxOreGiornaliere.h"><Filter>Engine</Filter></ClInclude>
+  </ItemGroup>
+</Project>
