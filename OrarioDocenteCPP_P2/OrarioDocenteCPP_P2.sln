@@ -4,7 +4,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OrarioDocenteCPP_P2", "OrarioDocenteCPP_P2.vcxproj", "{E97F5C3A-268D-4C9A-92A6-7F2D7A918A44}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DebugPolimorfismo_P2", "Debug\\DebugPolimorfismo_P2.vcxproj", "{C5B1D629-8A41-4E3A-B65C-A1D9F2173B40}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DebugPolimorfismo_P2", "Debug\DebugPolimorfismo_P2.vcxproj", "{C5B1D629-8A41-4E3A-B65C-A1D9F2173B40}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
