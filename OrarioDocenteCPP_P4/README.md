@@ -19,6 +19,6 @@ L'inserimento non verifica i vincoli. L'elaborazione tenta lo scambio usando `Mo
 4. Accodare uno scambio valido, elaborare, annullare: l'orario torna allo stato precedente se i vincoli correnti lo permettono.
 5. Modificare il massimo ore tra inserimento ed elaborazione: la validazione usa il limite aggiornato.
 
-**Stato verifiche:** il codice e la soluzione sono predisposti; compilazione Visual Studio su Windows da verificare. La P3 rimane il riferimento già verificato.
+**Stato verifiche:** compilazione ed esecuzione del progetto P4 in Visual Studio confermate dall'utente; la P3 rimane invariata.
 
 [Materiali didattici P4](../Documentazione/P4/README.md).
