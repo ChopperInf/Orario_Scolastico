@@ -3,6 +3,7 @@
 Materiali per la quarta Informatica, successivi alla P3 (`std::stack`, annullamento).
 
 - [Dispensa teorica](P4_Dispensa_Teorica.md)
+- [Approfondimento: implementazioni della coda con array, puntatori e template](P4_Approfondimento_Implementazioni_Coda.md)
 - [Presentazione docente — scaletta](P4_Presentazione_Docente.md)
 - [Guida di laboratorio](P4_Guida_Laboratorio.md)
 - [Eserciziario](P4_Esercizi.md)
