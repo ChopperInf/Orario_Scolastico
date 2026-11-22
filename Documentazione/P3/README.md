@@ -4,6 +4,7 @@ Percorso per la classe quarta Informatica. La P3 introduce l'ADT pila e `std::st
 
 ## Materiali
 - [Dispensa teorica](P3_Dispensa_Teorica.md)
+- [Approfondimento: implementazioni della pila con array, shift, puntatori e template](P3_Approfondimento_Implementazioni_Pila.md)
 - [Presentazione del docente (scaletta Markdown)](P3_Presentazione_Docente.md)
 - Presentazione PowerPoint: file `P3_Presentazione_Docente.pptx` generato separatamente; caricamento nel repository ancora da effettuare.
 - [Guida di laboratorio studenti](P3_Guida_Laboratorio.md)
