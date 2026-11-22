@@ -24,3 +24,7 @@ Progetto C++17 per Visual Studio 2022 (MSVC v143, x64), derivato da P2. Aprire `
 Il caricamento iniziale con `Orario::Set` avviene prima delle modifiche. Durante l'esecuzione tutte le modifiche ordinarie passano dal motore; chiamate esterne a `ScambiaCelle` invaliderebbero il significato della cronologia. La versione P2 rimane invariata.
 
 [Documentazione P3](../Documentazione/P3/README.md).
+
+## Stato e materiali didattici
+
+**Compilazione ed esecuzione verificate dall'utente** in Visual Studio. La P3 funzionale e' conclusa. I test manuali suggeriti sopra restano come riferimento ripetibile, non come rapporto di test automatizzati. L'eserciziario della [Documentazione/P3](../Documentazione/P3/) contiene 13 esercizi con soluzioni. La presentazione PowerPoint e' disponibile separatamente, in attesa di pubblicazione nel repository.
