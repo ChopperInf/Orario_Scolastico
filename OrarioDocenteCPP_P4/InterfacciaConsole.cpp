@@ -78,6 +78,39 @@ void InterfacciaConsole::RichiediScambio() {
         cout << "Scambio rifiutato: " << messaggio << ".\n";
 }
 
+
+void InterfacciaConsole::AccodaRichiesta() {
+    cout << "\nINSERISCI RICHIESTA DI SCAMBIO\nPrima posizione:\n";
+    Posizione prima = LeggiPosizione();
+    cout << "Seconda posizione:\n";
+    Posizione seconda = LeggiPosizione();
+    // Nessun controllo dei vincoli: saranno valutati all'elaborazione.
+    gestoreRichieste.Accoda(RichiestaScambio(prima, seconda));
+    cout << "Richiesta accodata. In attesa: "
+         << gestoreRichieste.NumeroRichieste() << ".\n";
+}
+
+void InterfacciaConsole::ElaboraRichiesta() {
+    string messaggio;
+    EsitoRichiesta esito = gestoreRichieste.ElaboraPrima(motore, orario, messaggio);
+    switch (esito) {
+    case EsitoRichiesta::CODA_VUOTA:
+        cout << messaggio << "\n";
+        break;
+    case EsitoRichiesta::ACCETTATA:
+        cout << "Richiesta accettata: scambio registrato nella pila.\n";
+        break;
+    case EsitoRichiesta::RIFIUTATA:
+        cout << "Richiesta rifiutata: " << messaggio << ".\n";
+        break;
+    }
+    cout << "Richieste rimaste: " << gestoreRichieste.NumeroRichieste() << ".\n";
+}
+
+void InterfacciaConsole::MostraCoda() {
+    cout << "Richieste in attesa: " << gestoreRichieste.NumeroRichieste() << ".\n";
+}
+
 void InterfacciaConsole::RichiediAnnullamento() {
     string messaggio;
     if (motore.Annulla(orario, messaggio))
@@ -119,7 +152,7 @@ void InterfacciaConsole::Esegui() {
     int scelta;
     do {
         MostraMenu();
-        scelta = LeggiIntero("Scelta: ", 0, 9);
+        scelta = LeggiIntero("Scelta: ", 0, 12);
         switch (scelta) {
         case 1: VisualizzaOrario(); break;
         case 2: VisualizzaTessera(); break;
@@ -130,6 +163,9 @@ void InterfacciaConsole::Esegui() {
         case 7: AggiungiClasse(); break;
         case 8: ModificaMassimoOre(); break;
         case 9: RichiediAnnullamento(); break;
+        case 10: AccodaRichiesta(); break;
+        case 11: ElaboraRichiesta(); break;
+        case 12: MostraCoda(); break;
         case 0: cout << "Chiusura del programma.\n"; break;
         }
     } while (scelta != 0);
