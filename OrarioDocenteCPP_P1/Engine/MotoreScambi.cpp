@@ -1,21 +1,11 @@
 #include "MotoreScambi.h"
-
-bool MotoreScambi::Scambia(Orario& orario, Posizione prima, Posizione seconda) {
-    if (prima.GetGiorno() < 0 || prima.GetGiorno() >= 5 ||
-        prima.GetOra() < 0 || prima.GetOra() >= 8 ||
-        seconda.GetGiorno() < 0 || seconda.GetGiorno() >= 5 ||
-        seconda.GetOra() < 0 || seconda.GetOra() >= 8) return false;
-
-    if (prima.GetGiorno() == seconda.GetGiorno() &&
-        prima.GetOra() == seconda.GetOra()) return false;
-
-    // L'orario di partenza deve essere privo di buchi.
-    if (!validatore.SenzaBuchi(orario)) return false;
-
-    orario.ScambiaCelle(prima, seconda);
+bool MotoreScambi::Scambia(Orario& orario, Posizione a, Posizione b) {
+    int g1 = a.GetGiorno(), o1 = a.GetOra(), g2 = b.GetGiorno(), o2 = b.GetOra();
+    if (g1 < 0 || g1 >= 5 || o1 < 0 || o1 >= 8 ||
+        g2 < 0 || g2 >= 5 || o2 < 0 || o2 >= 8 ||
+        (g1 == g2 && o1 == o2) || !validatore.SenzaBuchi(orario)) return false;
+    orario.ScambiaCelle(a, b);
     if (validatore.SenzaBuchi(orario)) return true;
-
-    // Se lo scambio crea un buco, ripristina l'orario precedente.
-    orario.ScambiaCelle(prima, seconda);
+    orario.ScambiaCelle(a, b); // Ripristino.
     return false;
 }

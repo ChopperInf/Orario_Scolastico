@@ -1,8 +1,6 @@
 #include "Tessera.h"
-
-Tessera::Tessera(std::string materia, std::string classe, std::string aula)
-    : materia(materia), classe(classe), aula(aula) {}
-
+Tessera::Tessera(std::string materia, std::string docente, std::string aula)
+    : materia(materia), docente(docente), aula(aula) {}
 std::string Tessera::GetMateria() { return materia; }
-std::string Tessera::GetClasse() { return classe; }
+std::string Tessera::GetDocente() { return docente; }
 std::string Tessera::GetAula() { return aula; }

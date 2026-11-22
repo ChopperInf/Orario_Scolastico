@@ -1,18 +1,17 @@
 #include "DatiEsempio.h"
-
+#include <string>
 bool DatiEsempio::Carica(Orario& orario) {
-    const std::string classi[4] = {"4AI", "4BI", "3AI", "5AI"};
-    const std::string materie[2] = {"Informatica", "Laboratorio"};
-
-    for (int giorno = 0; giorno < 5; giorno++) {
-        int numeroLezioni = (giorno == 4) ? 6 : 7;
-        for (int ora = 0; ora < numeroLezioni; ora++) {
-            std::string classe = classi[(giorno + ora) % 4];
-            std::string materia = materie[(giorno + ora) % 2];
-            std::string aula = "A" + std::to_string(ora + 1);
-            Tessera* tessera = new Tessera(materia, classe, aula);
-            if (!orario.Set(Posizione(giorno, ora), tessera)) {
-                delete tessera; // Set non ha acquisito la proprieta'.
+    std::string materie[7] = {"Matematica", "Informatica", "Italiano", "Inglese",
+                              "Sistemi", "TPS", "Storia"};
+    std::string docenti[7] = {"Rossi", "Bianchi", "Verdi", "Neri",
+                              "Gialli", "Conti", "Riva"};
+    for (int g = 0; g < 5; g++) {
+        int n = (g == 4) ? 6 : 7;
+        for (int o = 0; o < n; o++) {
+            int i = (g + o) % 7;
+            Tessera* t = new Tessera(materie[i], docenti[i], "A" + std::to_string(o + 1));
+            if (!orario.Set(Posizione(g, o), t)) {
+                delete t; // Set non ha acquisito la tessera.
                 return false;
             }
         }
@@ -20,10 +19,19 @@ bool DatiEsempio::Carica(Orario& orario) {
     return true;
 }
 
-bool DatiEsempio::CaricaClassi(ElencoClassi& elenco) {
-    // Le sigle coincidono con quelle utilizzate nelle tessere dell'orario.
-    return elenco.Aggiungi(Classe("4AI", "Informatica", 24)) &&
-           elenco.Aggiungi(Classe("4BI", "Informatica", 22)) &&
-           elenco.Aggiungi(Classe("3AI", "Informatica", 25)) &&
-           elenco.Aggiungi(Classe("5AI", "Informatica", 21));
+bool DatiEsempio::CaricaAule(ElencoAule& elenco)
+{
+    if (!elenco.Aggiungi(Aula("INF1", "Laboratorio", "Lotto 2"))) {
+        return false;
+    }
+
+    if (!elenco.Aggiungi(Aula("A1", "Aula", "Lotto 1"))) {
+        return false;
+    }
+
+    if (!elenco.Aggiungi(Aula("A5", "Laboratorio", "Lotto 3"))) {
+        return false;
+    }
+
+    return true;
 }

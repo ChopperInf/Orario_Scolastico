@@ -1,14 +1,10 @@
 #pragma once
 #include <string>
-
 class Tessera {
-private:
-    std::string materia;
-    std::string classe;
-    std::string aula;
+    std::string materia, docente, aula;
 public:
-    Tessera(std::string materia, std::string classe, std::string aula);
+    Tessera(std::string materia, std::string docente, std::string aula);
     std::string GetMateria();
-    std::string GetClasse();
+    std::string GetDocente();
     std::string GetAula();
 };

@@ -1,17 +1,15 @@
 #pragma once
-#include <string>
 #include "Model/Orario.h"
-#include "Model/ElencoClassi.h"
 #include "Engine/MotoreScambi.h"
 #include "Engine/ValidatoreOrario.h"
+#include <string>
+#include "ElencoAule.h"
 
 class InterfacciaConsole {
-private:
-    Orario& orario; // Riferimento non proprietario.
-    ElencoClassi& elencoClassi; // Riferimento non proprietario.
+    Orario& orario;
+    ElencoAule& elencoAule;
     MotoreScambi motore;
     ValidatoreOrario validatore;
-
     int LeggiIntero(std::string messaggio, int minimo, int massimo);
     Posizione LeggiPosizione();
     void VisualizzaOrario();
@@ -19,10 +17,11 @@ private:
     void RichiediScambio();
     void VerificaOrario();
     void MostraMenu();
-    void VisualizzaClassi();
-    void CercaClasse();
-    void AggiungiClasse();
+
+    void visualizzaAule();
+    void cercaAula();
+    void aggiungiAula();
 public:
-    InterfacciaConsole(Orario& orario, ElencoClassi& elencoClassi);
+    InterfacciaConsole(Orario& orario, ElencoAule& elencoAule);
     void Esegui();
 };

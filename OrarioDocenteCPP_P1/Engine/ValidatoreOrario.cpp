@@ -1,20 +1,10 @@
 #include "ValidatoreOrario.h"
-
 bool ValidatoreOrario::SenzaBuchi(Orario& orario) {
-    for (int giorno = 0; giorno < 5; giorno++) {
-        bool lezioneIniziata = false;
-        bool bucoTrovato = false;
-
-        for (int ora = 0; ora < 8; ora++) {
-            if (orario.Get(Posizione(giorno, ora)) != nullptr) {
-                // Una lezione dopo una cella vuota interna crea un buco.
-                if (bucoTrovato) return false;
-                lezioneIniziata = true;
-            }
-            else if (lezioneIniziata) {
-                // Potrebbe essere un buco oppure la fine delle lezioni.
-                bucoTrovato = true;
-            }
+    for (int g = 0; g < 5; g++) {
+        bool vuota = false;
+        for (int o = 0; o < 8; o++) {
+            if (orario.Get(Posizione(g, o)) == nullptr) vuota = true;
+            else if (vuota) return false;
         }
     }
     return true;
