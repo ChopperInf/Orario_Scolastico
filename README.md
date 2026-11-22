@@ -97,7 +97,7 @@ Le versioni consolidate del progetto docente sono conservate in cartelle autonom
 La fase P2 presenta due applicazioni del polimorfismo: [P2-A — vincoli](Documentazione/P2/P2_Dispensa_Teorica.md) e [P2-B — tessere di aula e laboratorio](Documentazione/P2/P2_Dispensa_Teorica_Tessere_Polimorfiche.md). La versione docente P2 contiene `TesseraAula`, `TesseraLaboratorio` e la dotazione informatica opzionale `DotazioneLabInformatica`; P0 e P1 restano versioni storiche autonome.
 
 
-## Percorso C++ docente — P0, P1, P2, P3
+## Percorso C++ docente — P0, P1, P2, P3, P4
 
 Il repository comprende prototipi didattici successivi e autonomi, con il codice del docente separato dalle attività degli studenti. La descrizione del primo prototipo nelle sezioni precedenti rimane come riferimento storico.
 
@@ -105,7 +105,13 @@ Il repository comprende prototipi didattici successivi e autonomi, con il codice
 | --- | --- | --- |
 | P2 | Vincoli e tessere polimorfiche | [OrarioDocenteCPP_P2](OrarioDocenteCPP_P2/) |
 | **P3** | **Pila LIFO, cronologia degli scambi e annullamento** | [OrarioDocenteCPP_P3](OrarioDocenteCPP_P3/) |
+| **P4** | **Coda FIFO, richieste di scambio e validazione differita** | [OrarioDocenteCPP_P4](OrarioDocenteCPP_P4/) |
 
 La [documentazione P3](Documentazione/P3/) comprende dispensa teorica, presentazione docente in Markdown, guida di laboratorio, eserciziario con **13 esercizi**, soluzioni e piano dei test. La versione PowerPoint della presentazione è stata prodotta separatamente e deve ancora essere caricata nel repository.
 
 **Stato P3:** compilazione ed esecuzione del progetto confermate dall'utente in Visual Studio; codice e materiali Markdown pubblicati. La versione P2 rimane invariata.
+
+
+## Materiali P4
+
+La [Documentazione/P4](Documentazione/P4/) comprende dispensa teorica, presentazione docente, guida laboratorio, eserciziario, soluzioni e piano test. La P4 e' in sviluppo sul ramo `p4-coda-richieste`; il prototipo P3 sul ramo principale resta invariato.
