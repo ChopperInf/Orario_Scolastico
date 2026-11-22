@@ -32,5 +32,15 @@ Un utente esegue A, B, C; modifica un vincolo; l'annullamento di C fallisce. Puo
 ## E10 — Pila o coda? (confronto)
 Per ciascun caso scegliere LIFO o FIFO e motivare: cronologia di annullamento, richieste di assistenza nell'ordine di arrivo, controllo parentesi, stampa di lavori nell'ordine di invio.
 
+
+## E11 — Duplicare una pila (intermedio)
+Scrivere una funzione `void Duplica(std::stack<int>& originale, std::stack<int>& copia)` che copi tutti gli elementi della pila `originale` nella pila `copia`, **mantenendo lo stesso ordine dalla cima al fondo**. Al termine, la pila originale deve essere invariata e la pila copia deve contenere soltanto gli elementi copiati (eventuali elementi precedenti vanno rimossi). Usare esclusivamente le operazioni dell'ADT pila e una pila ausiliaria; non utilizzare l'assegnamento diretto fra pile. Provare con una pila vuota, una con un elemento e una con piu' elementi.
+
+## E12 — Eliminare l'elemento in posizione x (intermedio)
+Scrivere `bool EliminaInPosizione(std::stack<int>& pila, int x)`. La posizione **0 indica la cima**, la posizione 1 l'elemento immediatamente sotto e cosi' via. Rimuovere l'elemento richiesto mantenendo invariato l'ordine degli altri. Restituire `false` e lasciare la pila invariata se `x < 0` o `x >= pila.size()`. Usare una pila ausiliaria, senza accedere direttamente agli elementi interni. Provare la rimozione della cima, di un elemento centrale, del fondo e una posizione non valida.
+
+## E13 — Eliminare tutti i numeri pari (intermedio)
+Scrivere `void EliminaPari(std::stack<int>& pila)` che elimini **tutti i valori pari**, compreso lo zero, preservando l'ordine relativo dei numeri dispari. Usare una pila ausiliaria e le sole operazioni dell'ADT. Provare con soli pari, soli dispari, numeri misti, numeri negativi e pila vuota. Spiegare perche' trasferire direttamente i dispari in una seconda pila, senza un ulteriore passaggio, ne invertirebbe l'ordine.
+
 ## Fonti e spunti didattici
 La selezione riprende applicazioni classiche dell'ADT pila, adattate al livello di quarta Informatica. Per il contesto scolastico italiano: [programmazione di quarta Informatica dell'IIS Angioy](https://www.istitutoangioy.edu.it/wp-content/uploads/2025/06/4B_INFO_informatica.pdf) (ADT pila e laboratorio) e [programmazione dell'IIS Buccari-Marconi](https://www.buccarimarconi.edu.it/wp-content/uploads/ftp-explorer/programmazioni_disciplinari/2023-2024/Informatica-3Is.pdf) (strutture pila e coda). Gli esercizi qui formulati sono originali e non trascrizioni di materiali altrui.
