@@ -1,30 +1,24 @@
-# OrarioDocenteCPP_P4 — annullamento con pila
+# P4 — La coda FIFO e le richieste di scambio
 
-Progetto C++17 per Visual Studio 2022 (MSVC v143, x64), derivato da P2. Aprire `OrarioDocenteCPP_P4.sln`, selezionare Debug|x64 o Release|x64 e avviare con Ctrl+F5.
+La P4 estende il prototipo docente P3, senza modificarlo, introducendo `std::queue<RichiestaScambio>`. Soluzione Visual Studio 2022 (`OrarioDocenteCPP_P4.sln`), C++17, x64, MSVC v143.
 
 ## Novita'
-- `Engine/Modifica.h`: memorizza le due posizioni dello scambio.
-- `MotoreScambi`: contiene `std::stack<Modifica>` e offre `Annulla`.
-- Menu opzione **9**: annullamento dell'ultimo scambio.
-- Gli scambi ordinari controllano stato iniziale e finale; l'annullamento controlla il solo stato finale con i vincoli correnti.
-- Un annullamento rifiutato non modifica ne' orario ne' pila.
-- Il motore si associa al primo orario modificato; non va riutilizzato per un altro orario.
-- Il debug didattico P2 rimane disattivato nel progetto normale.
+- `Engine/RichiestaScambio.h`: due posizioni richieste, senza modificare l'orario.
+- `Engine/GestoreRichieste.h/.cpp`: coda FIFO, `Accoda`, `Vuota`, `NumeroRichieste`, `ElaboraPrima`.
+- `EsitoRichiesta`: `CODA_VUOTA`, `ACCETTATA`, `RIFIUTATA`.
+- Menu 10: accoda; 11: elabora una richiesta; 12: numero richieste.
+- Menu 3: scambio immediato; menu 9: annullamento LIFO, entrambi conservati.
 
-## Prova manuale
-1. Avviare: il limite iniziale e' 4 e l'orario dimostrativo non e' valido.
-2. Menu 8: impostare 7.
-3. Menu 3: scambiare lunedi' ore 1 e 2.
-4. Menu 3: scambiare martedi' ore 1 e 2.
-5. Menu 9 due volte: si ripristina l'orario originale; una terza volta segnala pila vuota.
-6. Ripetere uno scambio valido; impostare il limite a 4; menu 9: l'annullamento e' rifiutato e rimane in pila.
-7. Impostare il limite a 7; menu 9: l'annullamento riesce.
+## Regole
+L'inserimento non verifica i vincoli. L'elaborazione tenta lo scambio usando `MotoreScambi::Scambia` e i vincoli correnti; rimuove sempre la richiesta dalla coda, anche quando rifiutata. Soltanto gli scambi riusciti vengono registrati nella pila P3. Coda vuota: nessuna modifica. Il programma non salva la coda su disco.
 
-## Limiti didattici
-Il caricamento iniziale con `Orario::Set` avviene prima delle modifiche. Durante l'esecuzione tutte le modifiche ordinarie passano dal motore; chiamate esterne a `ScambiaCelle` invaliderebbero il significato della cronologia. La versione P2 rimane invariata.
+## Prove manuali
+1. Elaborare a coda vuota: `CODA_VUOTA`, nessuna modifica.
+2. Accodare R1 e R2, elaborare due volte: FIFO, numero richieste 2→1→0.
+3. Accodare due posizioni uguali: inserimento consentito; rifiuto all'elaborazione e rimozione.
+4. Accodare uno scambio valido, elaborare, annullare: l'orario torna allo stato precedente se i vincoli correnti lo permettono.
+5. Modificare il massimo ore tra inserimento ed elaborazione: la validazione usa il limite aggiornato.
 
-[Documentazione P3](../Documentazione/P3/README.md).
+**Stato verifiche:** il codice e la soluzione sono predisposti; compilazione Visual Studio su Windows da verificare. La P3 rimane il riferimento già verificato.
 
-## Stato e materiali didattici
-
-**Compilazione ed esecuzione verificate dall'utente** in Visual Studio. La P3 funzionale e' conclusa. I test manuali suggeriti sopra restano come riferimento ripetibile, non come rapporto di test automatizzati. L'eserciziario della [Documentazione/P3](../Documentazione/P3/) contiene 13 esercizi con soluzioni. La presentazione PowerPoint e' disponibile separatamente, in attesa di pubblicazione nel repository.
+[Materiali didattici P4](../Documentazione/P4/README.md).
